@@ -18,7 +18,7 @@ export default function ProductReport() {
     async function getproduct() {
         try {
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://64.92.98.3:3001/product/getproduct", { headers: { Authorization: token } })
+            const data = await axios.get("http://164.92.98.3:3001/product/getproduct", { headers: { Authorization: token } })
             console.log(data.data)
             if (data.status == 200) {
                 setproduct(data.data);

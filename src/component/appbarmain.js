@@ -84,7 +84,7 @@ export default function MainApp() {
                "usernameId": data._id,
                "username": data.username
             }
-            const datalogin = await axios.post("http://64.92.98.3:3001/user/refresh", datas);
+            const datalogin = await axios.post("http://164.92.98.3:3001/user/refresh", datas);
             if (datalogin.status == 200) {
                localStorage.setItem("token", datalogin.data)
                setlogouts(false);
@@ -146,11 +146,11 @@ const mainpage = ({mains}) => {
            <>
                <div className=" h-50-px bg-default py-2 pl-3 d-flex justify-content-between">
                   <div >
-                     <img src={`http://64.92.98.3:3001/image/post/logo_2.png`} className="h-50-px cursor-pointer" onClick={() => mainpage({mains : false})} />
+                     <img src={`http://164.92.98.3:3001/image/post/logo_2.png`} className="h-50-px cursor-pointer" onClick={() => mainpage({mains : false})} />
 
                   </div>
                   <div className=" d-flex align-items-center pr-5">
-                     <img src="http://64.92.98.3:3001/image/post/user.png" className="w-30-px h-30-px mr-2" />
+                     <img src="http://164.92.98.3:3001/image/post/user.png" className="w-30-px h-30-px mr-2" />
                      <span className="font-14-px text-white">  {username} </span>
 
                   </div>
