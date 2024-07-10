@@ -13,11 +13,12 @@ export default function ProductReport() {
 
 
     const [product, setproduct] = useState([]);
+    const [dates, setdate] = useState(null)
 
     async function getproduct() {
         try {
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://147.182.204.175:3001/product/getproduct", { headers: { Authorization: token } })
+            const data = await axios.get("http://127.0.0.1:3001/product/getproduct", { headers: { Authorization: token } })
             console.log(data.data)
             if (data.status == 200) {
                 setproduct(data.data);
@@ -28,7 +29,7 @@ export default function ProductReport() {
     }
     useEffect(() => {
         getproduct();
-
+        date();
     }, [])
 
     const print = () => {
@@ -59,7 +60,31 @@ export default function ProductReport() {
 
         }
     }
+    const date = () => {
+        try {
 
+            const dates = new Date().getDate().toString().length == 1 ? "0" + new Date().getDate().toString() : new Date().getDate().toString();
+
+            const month = new Date().getMonth() ? (new Date().getMonth() + 1).toString().length == 1 ? "0" + (new Date().getMonth() + 1) : (new Date().getMonth().toString() + 1) : (new Date().getMonth().toString() + 1);
+
+            const year = new Date().getFullYear().toString().length == 1 ? "0" + new Date().getFullYear().toString() : new Date().getFullYear().toString();
+            const datetime = dates + "/" + month + "/" + year
+            setdate(datetime)
+            // return datetime;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+ const numbers = ({number}) => {
+try {
+  var nf = new Intl.NumberFormat();
+  return nf.format(number);
+
+} catch (error) {
+    
+}
+
+ }
 
 
     return (
@@ -76,7 +101,7 @@ export default function ProductReport() {
                     </div>
                     <div className="d-flex flex-direction-column pl-7 pr-3">
                         <span className="font-14-px"> ລາຍງານສິນຄ້າທັງໝົດ  </span>
-                        <span className="font-14-px"> ວັນທີ : {Date.now()} </span>
+                        <span className="font-14-px"> ວັນທີ : {dates} </span>
                     </div>
                     <div className="w-95 d-flex justify-content-center  m-auto">
                         <div className="w-100 d-flex flex-direction-column">
@@ -96,20 +121,20 @@ export default function ProductReport() {
                                         <tr key={index}>
                                             <td> {index + 1}</td>
                                             <td>{item.nameProduct}</td>
-                                            <td>{item.quantity}</td>
+                                            <td>{numbers({number :item.quantity})}</td>
                                             <td>{item.amount}</td>
-                                            <td> {item.amount} </td>
+                                            <td> { item.amount} </td>
                                         </tr>
 
                                     )}
                                 </tbody>
                             </table>
                             <div className="w-100 d-flex justify-content-end mt-2">
-                                <span className="font-14-px"> ລວມຈຳນວນລາຍການ : {product.length}</span>
+                                <span className="font-14-px"> ລວມຈຳນວນລາຍການ : { product.length}</span>
                             </div>
-                            <div className="w-100 d-flex justify-content-end">
+                            {/* <div className="w-100 d-flex justify-content-end">
                                 <span className="font-14-px"> ລວມລາຄາທັງໝົດ : </span>
-                            </div>
+                            </div> */}
 
 
                         </div>

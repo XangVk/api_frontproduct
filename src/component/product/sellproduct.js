@@ -102,7 +102,7 @@ export default function SellProduct() {
 
     //         const token = localStorage.getItem("token");
 
-    //         const data = await axios.post("http://147.182.204.175:3001/productsell/createproductsell", productadd, { headers: { Authorization: token } });
+    //         const data = await axios.post("http://127.0.0.1:3001/productsell/createproductsell", productadd, { headers: { Authorization: token } });
 
     //         if (data.status == 200) {
     //             console.log(data.data);
@@ -120,7 +120,7 @@ export default function SellProduct() {
         try {
 
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://147.182.204.175:3001/product/getproduct", { headers: { Authorization: token } });
+            const data = await axios.get("http://127.0.0.1:3001/product/getproduct", { headers: { Authorization: token } });
 
             if (data.status == 200) {
                 setproduct(data.data);
@@ -136,7 +136,7 @@ export default function SellProduct() {
             let key = { key: keyword }
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://147.182.204.175:3001/productsell/getproductsellbysell", { params: key, headers: { Authorization: token } });
+            const data = await axios.get("http://127.0.0.1:3001/productsell/getproductsellbysell", { params: key, headers: { Authorization: token } });
             if (data.status == 200) {
                 setproductsell(data.data);
                 console.log(data.data)
@@ -152,7 +152,7 @@ export default function SellProduct() {
 
             const token = localStorage.getItem("token");
             console.log(productadd)
-            const data = await axios.post("http://147.182.204.175:3001/sellproduct/createsellproduct", productadd, { headers: { Authorization: token } });
+            const data = await axios.post("http://127.0.0.1:3001/sellproduct/createsellproduct", productadd, { headers: { Authorization: token } });
             console.log(data.data)
             if (data.status = 200) {
                 console.log(data.data)
@@ -218,7 +218,7 @@ export default function SellProduct() {
                                     }}
                                     onKeyUp={(e) => { if (e.key != null) { getproductsell() } }}
                                 />
-                                <img src="http://147.182.204.175:3001/image/post/icon_search.png" className="h-30-px position-absolute top-0 right-42-l cursor-pointer" />
+                                <img src="http://127.0.0.1:3001/image/post/icon_search.png" className="h-30-px position-absolute top-0 right-42-l cursor-pointer" />
                             </div>
                         </div>
                         <div className=" d-flex max-height-77-vh flex-wrap-wrap overflow-y-scroll scroll pb-10 scroll-width-none ml-3 pt-5 ">
@@ -226,7 +226,7 @@ export default function SellProduct() {
                                 productsell.length > 0 && productsell.map((item, index) =>
                                     <div className="w-30 max-height-213-px mx-3 max-width-180-px  position-relative mb-4">
                                         <div className=" d-flex flex-direction-column    box-shadow-default overflow-hidden position-relative" onClick={() => addproduct({ item: item })}>
-                                            <img src={`http://147.182.204.175:3001/image/post/${item.image != "false" ? item.image : "noimage.jpg"}`} className="w-100 h-110-px min-h-110-px " />
+                                            <img src={`http://127.0.0.1:3001/image/post/${item.image != "false" ? item.image : "noimage.jpg"}`} className="w-100 h-110-px min-h-110-px " />
                                             <div className="d-flex flex-direction-column justify-content-between h-100">
                                                 <div className="d-flex flex-direction-column">
 
@@ -287,14 +287,14 @@ export default function SellProduct() {
                                     <span> ລວມລາຄາ:  </span> &nbsp;
                                     <span> {amounts()} </span>
                                 </div>
-                                <div className="d-flex justify-content-end px-2">
+                                {/* <div className="d-flex justify-content-end px-2">
                                     <span> ລວມລາຄາ:  </span> &nbsp;
                                     <span> 0.0000 </span>
                                 </div>
                                 <div className="d-flex justify-content-end px-2">
                                     <span> ລວມລາຄາ:  </span> &nbsp;
                                     <span> 0.0000 </span>
-                                </div>
+                                </div> */}
                                 <div className="pt-5">
 
                                     <button onClick={onaddsell} className="w-100 py-3 bg-blue-01 text-white cursor-pointer border-none"> ຊຳລະເງິນ </button>

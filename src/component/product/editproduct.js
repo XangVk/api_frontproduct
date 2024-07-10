@@ -21,7 +21,7 @@ export default function EditProducts({ datas, editdata }) {
             formdata.append("productnumber", values.productnumber);
             formdata.append("image", imageedit);
 
-            const datas = await axios.put(`http://147.182.204.175:3001/product/updateproduct/${values._id}`, formdata);
+            const datas = await axios.put(`http://127.0.0.1:3001/product/updateproduct/${values._id}`, formdata);
             if (datas.status == 200) {
                 console.log(datas.data)
                 editdata({ isedit: false, datas: null }, e)
@@ -63,7 +63,7 @@ export default function EditProducts({ datas, editdata }) {
             <div className="w-350-px bg-blue pb-7 pt-5 border-radius-3-px">
 
                 <div className="text-center position-relative w-100-px m-auto">
-                    <img src={imageurledit == null ? `http://147.182.204.175:3001/image/post/${values.image}` : imageurledit != null ? imageurledit : `http://147.182.204.175:3001/image/post/${values.image}`} className="w-100-px h-100-px border-radius-50" />
+                    <img src={imageurledit == null ? `http://127.0.0.1:3001/image/post/${values.image}` : imageurledit != null ? imageurledit : `http://127.0.0.1:3001/image/post/${values.image}`} className="w-100-px h-100-px border-radius-50" />
                     <label for="imagess" className="w-100-px h-100-px border-radius-50 position-absolute top-0 left-0">  </label>
                     <input type="file" id="imagess" onChange={uploadimage} />
                 </div>

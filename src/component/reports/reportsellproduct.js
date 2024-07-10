@@ -18,7 +18,7 @@ export default function Sellproductreport() {
 
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://147.182.204.175:3001/sellproduct/getsellproduct", { headers: { Authorization: token } });
+            const data = await axios.get("http://127.0.0.1:3001/sellproduct/getsellproduct", { headers: { Authorization: token } });
             if (data.status == 200) {
 
                 setproductsell(data.data);
@@ -33,7 +33,7 @@ export default function Sellproductreport() {
             const datesell = { dateStart: datestart, dateEnd: dateend };
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://147.182.204.175:3001/sellproduct/getsellproductdate", { params: datesell, headers: { Authorization: token } });
+            const data = await axios.get("http://127.0.0.1:3001/sellproduct/getsellproductdate", { params: datesell, headers: { Authorization: token } });
             if (data.status == 200) {
 
                 setproductsell(data.data);
@@ -82,6 +82,18 @@ export default function Sellproductreport() {
 
     }
 
+    const numbers = ({ num }) => {
+        try {
+
+            const number = new Intl.NumberFormat();
+
+            return number.format(num);
+
+        } catch (error) {
+
+        }
+
+    }
 
     return (
         <>
@@ -119,9 +131,9 @@ export default function Sellproductreport() {
                                         <tr>
                                             <td>{index + 1}</td>
                                             <td>{item.nameProduct}</td>
-                                            <td>{item.quantity}</td>
-                                            <td>{item.amount}</td>
-                                            <td>{totals({ quantity: item.quantity, price: item.amount })}  </td>
+                                            <td>{numbers({ num: item.quantity })}</td>
+                                            <td>{numbers({ num: item.amount })}</td>
+                                            <td>{numbers({num :  totals({ quantity: item.quantity, price: item.amount })})}  </td>
 
                                         </tr>
                                     )}
@@ -133,8 +145,8 @@ export default function Sellproductreport() {
 
                         </div>
                         <div className="d-flex justify-content-end pt-2 px-3">
-                        <span className="font-14-px"> ລວມລາຄາ :</span> &nbsp;
-                            <span className="font-14-px">{amouns()} </span>
+                            <span className="font-14-px"> ລວມລາຄາ :</span> &nbsp;
+                            <span className="font-14-px">{ numbers({num : amouns()})} </span>
                         </div>
                     </div>
                 </div>

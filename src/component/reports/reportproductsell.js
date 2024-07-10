@@ -15,7 +15,7 @@ export default function Reportproductsell() {
             const keyss = { key: keys };
 
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://147.182.204.175:3001/productsell/getproductsell", {params : keyss ,  headers: { Authorization: token } });
+            const data = await axios.get("http://127.0.0.1:3001/productsell/getproductsell", { params: keyss, headers: { Authorization: token } });
             if (data.status == 200) {
                 setproductsell(data.data);
             }
@@ -48,6 +48,18 @@ export default function Reportproductsell() {
         window.print();
         document.body.innerHTML = originhtml;
         window.location.reload();
+    }
+
+    const numbers = ({ number }) => {
+        try {
+            const num = new Intl.NumberFormat();
+
+            return num.format(number);
+
+
+        } catch (error) {
+
+        }
 
     }
 
@@ -82,9 +94,9 @@ export default function Reportproductsell() {
                                     <tr key={index}>
                                         <td>{index + 1}</td>
                                         <td>{item.nameProduct}</td>
-                                        <td>{item.quantity}</td>
-                                        <td>{item.amount}</td>
-                                        <td> {totals({ quantity: item.quantity, price: item.amount })} </td>
+                                        <td>{numbers({ number: item.quantity })}</td>
+                                        <td>{numbers({ number: item.amount })}</td>
+                                        <td> {numbers({ number: totals({ quantity: item.quantity, price: item.amount }) })} </td>
                                     </tr>
 
                                 )}
