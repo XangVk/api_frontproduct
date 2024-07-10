@@ -9,8 +9,8 @@ import { jwtDecode } from "jwt-decode";
 export default function Login() {
 
 
-    const [username, setusername] = useState(null);
-    const [password, setpassword] = useState(null);
+    const [username, setusername] = useState("admin");
+    const [password, setpassword] = useState("admin");
 
     async function onlogin() {
 
@@ -47,11 +47,11 @@ export default function Login() {
             <div className="w-100 text-center pt-5">
                 <span className="font-14-px"> ລົງຊື່ເຂົ້າໃຊ້ລະບົບ </span>
             </div>
-            <div className="w-50 d-flex flex-direction-column m-auto border-1-solid-gray">
+            <div className="w-50 d-flex flex-direction-column m-auto ">
                 <span className="font-14-px"> ຊື່ຜູ້ໃຊ້ລະບົບ </span>
-                <input type="text" className="py-1 border-radius-3-px" onChange={(e) => setusername(e.target.value)} />
+                <input type="text" className="py-1 border-radius-3-px" value={username} onChange={(e) => setusername(e.target.value)} />
                 <span className="font-14-px mt-1"> ລະຫັດຜ່ານ </span>
-                <input type="text" className="py-1 border-radius-3-px" onChange={(e) => setpassword(e.target.value)} />
+                <input type="text" className="py-1 border-radius-3-px" value={password} onChange={(e) => setpassword(e.target.value)} />
                 <button className="h-35-px w-100 mt-3 " onClick={onlogin}> ລົງຊື່ເຂົ້າໃຊ້ </button>
                 <div className="text-center pt-3">
                     <span className="text-white font-14-px"> ລືມລະຫັດຜ່ານ </span>
