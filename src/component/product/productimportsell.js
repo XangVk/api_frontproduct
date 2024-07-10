@@ -126,7 +126,7 @@ export default function Productimportsell() {
             }
 
             const token = localStorage.getItem("token");
-            const data = await axios.post("http://127.0.0.1:3001/productsell/createproductsell", productadd, { headers: { Authorization: token } });
+            const data = await axios.post("http://147.182.204.175:3001/productsell/createproductsell", productadd, { headers: { Authorization: token } });
             if (data.status == 200) {
 
                setproductadd([]);
@@ -148,7 +148,7 @@ export default function Productimportsell() {
             let keyss = { key: keyword };
 
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://127.0.0.1:3001/product/getproductby", { params: keyss, headers: { Authorization: token } });
+            const data = await axios.get("http://147.182.204.175:3001/product/getproductby", { params: keyss, headers: { Authorization: token } });
             if (data.status == 200) {
                 setproduct(data.data);
             }

@@ -29,7 +29,7 @@ export default function EditUser({ data, editdata }) {
             formdata.append("phone", phone);
             
             const token = localStorage.getItem("token");
-            const datass = await axios.put(`http://127.0.0.1:3001/user/updateuser/${data._id}`, formdata);
+            const datass = await axios.put(`http://147.182.204.175:3001/user/updateuser/${data._id}`, formdata);
             if (datass.status == 200) {
                 editdata({ data: {}, isedits: false }, e);
             }
@@ -63,7 +63,7 @@ export default function EditUser({ data, editdata }) {
             <div className="d-flex flex-direction-column px-3">
                 <span className="font-14-px m-auto">ແກ້ໄຂຂໍ້ມູນພະນັກງານ </span>
 
-                <img src={images != null ? images : `http://127.0.0.1:3001/image/post/noimage.jpg`} className="w-100-px h-100-px border-radius-50 m-auto" />
+                <img src={images != null ? images : `http://147.182.204.175:3001/image/post/noimage.jpg`} className="w-100-px h-100-px border-radius-50 m-auto" />
                 <label for="image" className="w-100-px h-30-px font-14-px bg-blue-01 text-white d-flex align-items-center justify-content-center border-radius-3-px" > ເລືອກຮູບ </label>
                 <input id="image" type="file" onChange={updateimage} />
                 <span className="font-14-px mt-2"> ຊື່ເຂົ້າໃຊ້ລະບົບ  </span>

@@ -23,7 +23,7 @@ export default function ReportProductimport() {
             const key = { key: keys };
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://127.0.0.1:3001/productimport/getproductimport", { params: key, headers: { Authorization: token } });
+            const data = await axios.get("http://147.182.204.175:3001/productimport/getproductimport", { params: key, headers: { Authorization: token } });
             if (data.status == 200) {
 
                 setproductimport(data.data);
@@ -46,7 +46,7 @@ export default function ReportProductimport() {
             const date = { dateStart: dateStart, dateEnd: dateEnd };
 
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://127.0.0.1:3001/productimport/getproductimportbydate", { params: date, headers: { Authorization: token } });
+            const data = await axios.get("http://147.182.204.175:3001/productimport/getproductimportbydate", { params: date, headers: { Authorization: token } });
             console.log(data.data)
             if (data.status == 200) {
                 setproductimport(data.data);
