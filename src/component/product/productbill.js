@@ -33,7 +33,7 @@ export default function Productbill({ data, btnbills }) {
 
     return (
         <>
-            <div className="w-400-px border-1-solid-default bg-white border-radius-3-px px-2 pb-5">
+            <div className="w-400-px border-1-solid-default bg-white border-radius-3-px px-2 pb-5 position-relative z-index-5">
 
                 <div className="text-center mt-2">
                     <span className="font-12-px"> ໃບບິນສິນຄ້າ </span>

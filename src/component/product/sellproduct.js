@@ -153,7 +153,9 @@ export default function SellProduct() {
 
     async function onaddsell() {
         try {
-
+if(productadd.length == 0){
+return;
+}
             const token = localStorage.getItem("token");
             console.log(productadd)
             const data = await axios.post("http://147.182.204.175:3001/sellproduct/createsellproduct", productadd, { headers: { Authorization: token } });
@@ -240,15 +242,15 @@ setbtnbill(status);
                                     }}
                                     onKeyUp={(e) => { if (e.key != null) { getproductsell() } }}
                                 />
-                                <img src="http://147.182.204.175:3001/image/post/icon_search.png" className="h-30-px position-absolute top-0 z-index-1 right-42-l cursor-pointer" />
+                                <img src="http://147.182.204.175:3001/image/post/icon_search.png" className="h-30-px position-absolute top-0  right-42-l cursor-pointer" />
                             </div>
                         </div>
                         <div className=" d-flex max-height-77-vh flex-wrap-wrap overflow-y-scroll scroll pb-10 scroll-width-none ml-3 pt-5 ">
                             {
                                 productsell.length > 0 && productsell.map((item, index) =>
                                     <div className="w-30 max-height-213-px mx-3 max-width-180-px  position-relative z-index-1 mb-4">
-                                        <div className=" d-flex flex-direction-column    box-shadow-default overflow-hidden position-relative" onClick={() => addproduct({ item: item })}>
-                                            <img src={`http://147.182.204.175:3001/image/post/${item.image != "false" ? item.image : "noimage.jpg"}`} className="w-100 h-110-px min-h-110-px " />
+                                        <div className=" d-flex flex-direction-column  box-shadow-default overflow-hidden position-relative z-index-1" onClick={() => addproduct({ item: item })}>
+                                            <img src={`http://147.182.204.175:3001/image/post/${item.image != "false" ? item.image : "noimage.jpg"}`} className="w-100 h-110-px min-h-110-px position-relative z-index-1" />
                                             <div className="d-flex flex-direction-column justify-content-between h-100">
                                                 <div className="d-flex flex-direction-column">
 
@@ -262,7 +264,7 @@ setbtnbill(status);
 
                                             </div>
                                         </div>
-                                        {item.quantity == 0 ? <span className="font-14-px text-white position-absolute top-7-l right-5-l px-1 border-radius-5-px bg-red"> ສິນຄ້າໝົດ </span> : ""}
+                                        {item.quantity == 0 ? <span className="font-14-px text-white position-absolute top-7-l right-5-l px-1 border-radius-5-px bg-red z-index-2"> ສິນຄ້າໝົດ </span> : ""}
 
                                     </div>
 
@@ -329,8 +331,8 @@ setbtnbill(status);
                     </div>
 
                 </div>
-                <div className={`w-100 h-90-vh bg-backdrop position-absolute top-0 left-0 z-index-5 d-flex justify-content-center aligm-items-center ${btnbill ? "display-block" : "display-none"} }`}>
-                   <div className="w-100 h-100 d-flex justify-content-center align-items-center">
+                <div className={`w-100 h-100-vh bg-backdrop position-absolute top-0 left-0 z-index-3 d-flex justify-content-center aligm-items-center ${btnbill ? "display-block" : "display-none"} }`}>
+                   <div className="w-100 h-100 d-flex justify-content-center align-items-center position-relative">
                     <Productbill data={productadd} btnbills={btnbills} />
 
                    </div>
