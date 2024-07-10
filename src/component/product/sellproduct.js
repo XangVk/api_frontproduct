@@ -5,14 +5,18 @@ import axios from "axios";
 
 import "../../css/style.css";
 import "../../css/product.css"
+import Productbill from "./productbill";
+
 export default function SellProduct() {
 
-//s
+    //s
     const [product, setproduct] = useState([]);
     const [productsell, setproductsell] = useState([]);
 
     const [productadd, setproductadd] = useState([]);
     const [keyword, setkeyword] = useState(null);
+ 
+    const [btnbill , setbtnbill] = useState(false);
 
     const addproduct = ({ item }) => {
         try {
@@ -156,9 +160,12 @@ export default function SellProduct() {
             console.log(data.data)
             if (data.status = 200) {
                 console.log(data.data)
-                setproductadd([]);
-                setkeyword("");
-                getproductsell();
+               
+               setbtnbill(true);
+                // setproductadd([]);
+                // setkeyword("");
+                // getproductsell();
+                
             }
 
         } catch (error) {
@@ -187,6 +194,21 @@ export default function SellProduct() {
 
     }
 
+ const btnbills = ({e , status}) => {
+try {
+    
+    if(status == false){
+        setproductadd([]);
+             setkeyword("");
+                getproductsell();
+    }
+setbtnbill(status);
+
+} catch (error) {
+    
+}
+
+ }
 
     useEffect(() => {
         getproductsell();
@@ -197,7 +219,7 @@ export default function SellProduct() {
     return (
 
         <>
-            <div className="w-100 h-93-vh overflow-y-scroll ">
+            <div className="w-100 h-93-vh overflow-y-scroll position-relative ">
 
                 <div className="pt-5 text-center">
                     <span className="font-18-px font-weight-bold "> ຈັດການການຂາຍສິນຄ້າ </span>
@@ -307,7 +329,12 @@ export default function SellProduct() {
                     </div>
 
                 </div>
+                <div className={`w-100 h-90-vh bg-backdrop position-absolute top-0 left-0 z-index-2 d-flex justify-content-center aligm-items-center ${btnbill ? "display-block" : "display-none"} }`}>
+                   <div className="w-100 h-100 d-flex justify-content-center align-items-center">
+                    <Productbill data={productadd} btnbills={btnbills} />
 
+                   </div>
+                </div>
             </div>
 
 
