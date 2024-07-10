@@ -188,8 +188,8 @@ const mainpage = ({mains}) => {
                               <i className="bx bxs-chevron-down arrow">  </i>
                            </div>
                            <ul className="sub-menu m-0">
-                              <li className=""><a href="/productadd" > ເພີ້ມຂໍ້ມູນສິນຄ້າ </a> </li>
-                              <li> <a href="/productimport">  ສິນຄ້ານຳເຂົ້າ </a> </li>
+                              <li className=""><a href="/productadd" > ເພີ້ມຂໍ້ມູນສິນຄ້າສາງ </a> </li>
+                              <li> <a href="/productimport">  ສິນຄ້ານຳເຂົ້າສາງ </a> </li>
                            </ul>
                         </li>
                         <li className="li-sell">
@@ -215,7 +215,7 @@ const mainpage = ({mains}) => {
                            </div>
                            <ul className="sub-menu m-0">
                               <li > <a href="/productreport"className="font-12-px"> ລາຍງານສິນຄ້າສາງສິນຄ້າ </a> </li>
-                              <li> <a href="/ProductimportReport" className="font-12-px"> ລາຍງານສິນຄ້ານຳເຂົ້າທັງໝົດ </a> </li>
+                              <li> <a href="/ProductimportReport" className="font-12-px"> ລາຍງານສິນຄ້ານຳເຂົ້າສາງທັງໝົດ </a> </li>
                               {/* <li> <a href="/pdfexport"> pdfproductexport </a> </li> */}
                               <li> <a href="/Productsellreport"className="font-12-px"> ລາຍງານການຂາຍສິນຄ້າ </a> </li>
                               <li> <a href="/Reportproductsell"className="font-12-px"> ລາຍງານສິນຄ້າຂາຍໜ້າຮ້ານ </a> </li>
