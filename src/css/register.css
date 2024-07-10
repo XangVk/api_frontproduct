@@ -1,0 +1,29 @@
+
+input[type="file"]{
+    display: none;
+}
+
+input{
+    padding-left: 8px;
+}
+table.tables tr th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: gray;
+    color: white;
+    font-size: 14px;
+ font-weight: 500;
+}
+
+table.tables tbody tr td {
+    border: 1px solid ;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
+.div-center{
+    transform: translate(25% , -50%);
+}

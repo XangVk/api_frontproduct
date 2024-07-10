@@ -1,0 +1,37 @@
+
+.tableprint thead tr th{
+    background-color: gray;
+    /* color: white; */
+    font-size: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: black;
+    text-align: center;
+
+}
+.tableprint thead tr th.no_{
+    width: 50px;
+    font-size: 12px;
+    color: black;
+
+ 
+}
+
+.tableprint tbody tr td{
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 12px;
+
+}
+
+.tableprint thead tr th , 
+.tableprint tbody tr td{
+    border: 1px solid #ddd;
+} 
+.tableprint{
+    border-collapse: collapse;
+}
+th{
+
+}

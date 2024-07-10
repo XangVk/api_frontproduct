@@ -1,0 +1,74 @@
+/* component  product add */
+
+
+table.tables thead tr th {
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: gray;
+    /* border: 1px solid #ddd; */
+    color: white;
+}
+
+table.tables thead tr th.no_ {
+    width: 60px;
+
+}
+
+table.tables thead tr th.more_ {
+    width: 100px;
+    white-space: nowrap;
+}
+
+table.tables tbody tr td {
+    text-align: center;
+    border: 0;
+    font-size: 12px;
+    padding: 5px 8px;
+    ;
+}
+table.tables tbody tr td.btn{
+    padding: 0;
+
+}
+table.tables tbody tr td {
+    border: 1px solid #ddd;
+   
+}
+
+.tables tr:hover {
+    background-color: #f2f2f2;
+}
+
+table.tables {
+    border-collapse: collapse;
+}
+
+table.tables tbody tr.edit  {
+
+width: 100%;
+    /* tr edit  */
+
+}
+
+table.tables thead tr th {
+    border-right: 1px solid #dddddd;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+
+}
+/* input[type="file"]{
+display: none;
+} */

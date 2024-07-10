@@ -1,0 +1,71 @@
+.tableimport thead tr th {
+    font-size: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: gray;
+    color: white;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+}
+
+.tableimport {
+    border-collapse: collapse;
+
+
+}
+
+.tableimport thead tr th,
+.tableimport tbody tr td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tableimport tbody tr td {
+    text-align: center;
+    font-size: 11px;
+}
+
+.h-addproduct {
+    height: 0px;
+    transition: height .15s ease-out;
+
+}
+
+.h-addproduct.show {
+
+    height: 170px;
+    transition: height .16s ease-out;
+    background-color: #ddd;
+}
+
+div.showproduct {
+    width: 0;
+    transition: width .20s ease-out;
+}
+div.showproduct.show{
+  
+    width: 1000px;
+    height: 400px;
+    transition: width .20s ease-in;
+    overflow-y: scroll;
+}
+
+div.showproduct.show table thead th {
+    position: sticky;
+    top: 0;
+}
+
+div.showproduct.show table tbody tr td{
+    padding: 7px 0 ;
+}
+
+.container::-webkit-scrollbar{
+    width: 0;
+}
+.container::-webkit-scrollbar-track{
+    background-color: #ffffff00;
+}
+.container::-webkit-scrollbar-thumb{
+    background-color: #ffffff00;
+}
