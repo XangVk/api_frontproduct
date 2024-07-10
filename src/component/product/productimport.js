@@ -126,7 +126,7 @@ export default function ProductImport() {
         try {
             if (productadd.length == 0) return;
             const token = localStorage.getItem("token");
-            const data = await axios.post("http://127.0.0.1:3001/productimport/createproductimport", productadd, { headers: { Authorization: token } });
+            const data = await axios.post("http://147.182.204.175:3001/productimport/createproductimport", productadd, { headers: { Authorization: token } });
             console.log(data.data)
             if (data.status == 200) {
                 console.log(data.data)
@@ -155,7 +155,7 @@ export default function ProductImport() {
             }
             const token = localStorage.getItem("token");
 
-            const data = await axios.post("http://127.0.0.1:3001/product/createproductimage", datas, { headers: { Authorization: token } });
+            const data = await axios.post("http://147.182.204.175:3001/product/createproductimage", datas, { headers: { Authorization: token } });
 
             if (data.status == 200) {
                 console.log(data);
@@ -177,7 +177,7 @@ export default function ProductImport() {
 
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://127.0.0.1:3001/product/getproduct", { headers: { Authorization: token } });
+            const data = await axios.get("http://147.182.204.175:3001/product/getproduct", { headers: { Authorization: token } });
             if (data.status == 200) {
 
                 setproduct(data.data);

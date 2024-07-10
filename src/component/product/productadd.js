@@ -31,7 +31,7 @@ export default function Productadd() {
         try {
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://127.0.0.1:3001/product/getproduct", { headers: { Authorization: token } });
+            const data = await axios.get("http://147.182.204.175:3001/product/getproduct", { headers: { Authorization: token } });
             if (data.status = 200) {
                 // setproduct(data.data);
                 setproductall(data.data);
@@ -49,7 +49,7 @@ export default function Productadd() {
             const keyword = { key: keys };
             const token = localStorage.getItem("token");
             console.log({ "token": token, "keyword": keyword });
-            const data = await axios.get("http://127.0.0.1:3001/product/getproductby", { params: keyword, headers: { Authorization: token } });
+            const data = await axios.get("http://147.182.204.175:3001/product/getproductby", { params: keyword, headers: { Authorization: token } });
             console.log(data)
             if (data.status == 200) {
                 console.log(data.data);
@@ -89,7 +89,7 @@ export default function Productadd() {
                 console.log(isvalue)
                 return;
             }
-            const data = await axios.post("http://127.0.0.1:3001/product/createproductimage", formdata, { headers: { Authorization: token } });
+            const data = await axios.post("http://147.182.204.175:3001/product/createproductimage", formdata, { headers: { Authorization: token } });
 
             if (data.status == 200) {
                 getproductby();
@@ -106,7 +106,7 @@ export default function Productadd() {
     async function deleteproduct(id) {
         try {
             const token = localStorage.getItem("token");
-            const data = await axios.delete(`http://127.0.0.1:3001/product/deleteproduct/${id}`, { headers: { Authorization: token } });
+            const data = await axios.delete(`http://147.182.204.175:3001/product/deleteproduct/${id}`, { headers: { Authorization: token } });
             if (data.status == 200) {
                 getproductby();
                 // console.log(data.data)
@@ -225,7 +225,7 @@ export default function Productadd() {
                         <div className="w-60 d-flex flex-direction-column m-auto max-width-300-px pt-3 overflow-hidden mt-5 bg-gray-default-1 px-5 border-radius-3-px py-7 mt-3">
 
                             <div className="text-center position-relative">
-                                <img for="images" src={`${imageurl == null ? `http://127.0.0.1:3001/imageposts/` : imageurl}`} className="w-180-px h-180-px border-1-solid-gray border-radius-5-px border-1-solid-image" />
+                                <img for="images" src={`${imageurl == null ? `http://147.182.204.175:3001/imageposts/` : imageurl}`} className="w-180-px h-180-px border-1-solid-gray border-radius-5-px border-1-solid-image" />
                                 <label for="images" className="w-100 h-180-px   d-flex justify-content-center align-items-center font-12-px position-absolute top-0 left-0  " > </label>
                                 <input type="file" id="images" onChange={uploadimage} />
                             </div>
@@ -278,7 +278,7 @@ export default function Productadd() {
 
                                         <tr key={index}>
                                             <td>{index + 1}</td>
-                                            <td>{<img src={`http://127.0.0.1:3001/image/post/${item.image}`} className="w-40-px h-40-px border-radius-50 border-1-solid-default" />}</td>
+                                            <td>{<img src={`http://147.182.204.175:3001/image/post/${item.image}`} className="w-40-px h-40-px border-radius-50 border-1-solid-default" />}</td>
                                             <td className="max-width-100-px text-overflow-ellipsis overflow-hidden">{item.nameProduct}</td>
                                             <td>{item.productnumber}</td>
                                             <td>{item.quantity}</td>
