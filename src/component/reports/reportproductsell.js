@@ -15,7 +15,7 @@ export default function Reportproductsell() {
             const keyss = { key: keys };
 
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://localhost:3001/productsell/getproductsell", {params : keyss ,  headers: { Authorization: token } });
+            const data = await axios.get("http://147.182.204.175:3001/productsell/getproductsell", {params : keyss ,  headers: { Authorization: token } });
             if (data.status == 200) {
                 setproductsell(data.data);
             }

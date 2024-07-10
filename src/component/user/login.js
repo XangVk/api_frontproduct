@@ -19,7 +19,7 @@ export default function Login() {
                 "username": username,
                 "password": password
             }
-            const datas = await axios.post("http://127.0.0.1:3001/user/login", data);
+            const datas = await axios.post("http://147.182.204.175:3001/user/login", data);
             console.log(datas.data);
             if (datas.status == 200) {
 
