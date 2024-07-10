@@ -49,9 +49,9 @@ export default function Login() {
             </div>
             <div className="w-50 d-flex flex-direction-column m-auto ">
                 <span className="font-14-px"> ຊື່ຜູ້ໃຊ້ລະບົບ </span>
-                <input type="text" className="py-1 border-radius-3-px" value={username} onChange={(e) => setusername(e.target.value)} />
+                <input type="text" className="py-1 border-radius-3-px" value={username} onChange={(e) => setusername(e.target.value)} readOnly={ true} />
                 <span className="font-14-px mt-1"> ລະຫັດຜ່ານ </span>
-                <input type="text" className="py-1 border-radius-3-px" value={password} onChange={(e) => setpassword(e.target.value)} />
+                <input type="text" className="py-1 border-radius-3-px" value={password} onChange={(e) => setpassword(e.target.value)} readOnly={ true} />
                 <button className="h-35-px w-100 mt-3 " onClick={onlogin}> ລົງຊື່ເຂົ້າໃຊ້ </button>
                 <div className="text-center pt-3">
                     <span className="text-white font-14-px"> ລືມລະຫັດຜ່ານ </span>
