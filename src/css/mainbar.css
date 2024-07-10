@@ -257,4 +257,5 @@ transform: scale(1);
 }
 .main-sidebar .logo-detail-nav span.logo_names{
     font-size: 14px;
+    white-space: nowrap;
 }
