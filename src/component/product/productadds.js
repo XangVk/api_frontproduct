@@ -114,7 +114,7 @@ export default function ProductAdds({ tap, product }) {
             if (productadds.length == 0) {
                 return;
             }
-            const data = await axios.post("http://147.182.204.175:3001/product/createproduct", productadds, { headers: { Authorization: token } });
+            const data = await axios.post("http://64.92.98.3:3001/product/createproduct", productadds, { headers: { Authorization: token } });
             if (data.status == 200) {
 
                 console.log(data.data)

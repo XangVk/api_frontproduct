@@ -106,7 +106,7 @@ export default function SellProduct() {
 
     //         const token = localStorage.getItem("token");
 
-    //         const data = await axios.post("http://147.182.204.175:3001/productsell/createproductsell", productadd, { headers: { Authorization: token } });
+    //         const data = await axios.post("http://64.92.98.3:3001/productsell/createproductsell", productadd, { headers: { Authorization: token } });
 
     //         if (data.status == 200) {
     //             console.log(data.data);
@@ -124,7 +124,7 @@ export default function SellProduct() {
         try {
 
             const token = localStorage.getItem("token");
-            const data = await axios.get("http://147.182.204.175:3001/product/getproduct", { headers: { Authorization: token } });
+            const data = await axios.get("http://64.92.98.3:3001/product/getproduct", { headers: { Authorization: token } });
 
             if (data.status == 200) {
                 setproduct(data.data);
@@ -140,7 +140,7 @@ export default function SellProduct() {
             let key = { key: keyword }
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://147.182.204.175:3001/productsell/getproductsellbysell", { params: key, headers: { Authorization: token } });
+            const data = await axios.get("http://64.92.98.3:3001/productsell/getproductsellbysell", { params: key, headers: { Authorization: token } });
             if (data.status == 200) {
                 setproductsell(data.data);
                 console.log(data.data)
@@ -158,7 +158,7 @@ return;
 }
             const token = localStorage.getItem("token");
             console.log(productadd)
-            const data = await axios.post("http://147.182.204.175:3001/sellproduct/createsellproduct", productadd, { headers: { Authorization: token } });
+            const data = await axios.post("http://64.92.98.3:3001/sellproduct/createsellproduct", productadd, { headers: { Authorization: token } });
             console.log(data.data)
             if (data.status = 200) {
                 console.log(data.data)
@@ -242,7 +242,7 @@ setbtnbill(status);
                                     }}
                                     onKeyUp={(e) => { if (e.key != null) { getproductsell() } }}
                                 />
-                                <img src="http://147.182.204.175:3001/image/post/icon_search.png" className="h-30-px position-absolute top-0  right-42-l cursor-pointer" />
+                                <img src="http://64.92.98.3:3001/image/post/icon_search.png" className="h-30-px position-absolute top-0  right-42-l cursor-pointer" />
                             </div>
                         </div>
                         <div className=" d-flex max-height-77-vh flex-wrap-wrap overflow-y-scroll scroll pb-10 scroll-width-none ml-3 pt-5 ">
@@ -250,7 +250,7 @@ setbtnbill(status);
                                 productsell.length > 0 && productsell.map((item, index) =>
                                     <div className="w-30 max-height-213-px mx-3 max-width-180-px  position-relative z-index-1 mb-4">
                                         <div className=" d-flex flex-direction-column  box-shadow-default overflow-hidden position-relative z-index-1" onClick={() => addproduct({ item: item })}>
-                                            <img src={`http://147.182.204.175:3001/image/post/${item.image != "false" ? item.image : "noimage.jpg"}`} className="w-100 h-110-px min-h-110-px position-relative z-index-1" />
+                                            <img src={`http://64.92.98.3:3001/image/post/${item.image != "false" ? item.image : "noimage.jpg"}`} className="w-100 h-110-px min-h-110-px position-relative z-index-1" />
                                             <div className="d-flex flex-direction-column justify-content-between h-100">
                                                 <div className="d-flex flex-direction-column">
 

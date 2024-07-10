@@ -18,7 +18,7 @@ export default function Sellproductreport() {
 
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://147.182.204.175:3001/sellproduct/getsellproduct", { headers: { Authorization: token } });
+            const data = await axios.get("http://64.92.98.3:3001/sellproduct/getsellproduct", { headers: { Authorization: token } });
             if (data.status == 200) {
 
                 setproductsell(data.data);
@@ -33,7 +33,7 @@ export default function Sellproductreport() {
             const datesell = { dateStart: datestart, dateEnd: dateend };
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://147.182.204.175:3001/sellproduct/getsellproductdate", { params: datesell, headers: { Authorization: token } });
+            const data = await axios.get("http://64.92.98.3:3001/sellproduct/getsellproductdate", { params: datesell, headers: { Authorization: token } });
             if (data.status == 200) {
 
                 setproductsell(data.data);
