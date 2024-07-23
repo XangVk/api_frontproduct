@@ -40,7 +40,7 @@ export default function Register() {
             formdata.append("phone", phone);
             formdata.append("image", images);
 
-            const user = await axios.post("http://164.92.98.3:3001/user/createuser", formdata);
+            const user = await axios.post("http://164.92.69.177:3001/user/createuser", formdata);
             if (user.status === 200) {
                 console.log(user.data);
                 cleardata();
@@ -54,7 +54,7 @@ export default function Register() {
     async function getuser() {
         try {
 
-            const data = await axios.get("http://164.92.98.3:3001/user/getuser");
+            const data = await axios.get("http://164.92.69.177:3001/user/getuser");
             if (data.status == 200) {
 
                 setuser(data.data);
@@ -67,7 +67,7 @@ export default function Register() {
     }
     async function deleteuser(id) {
         try {
-            const data = await axios.delete(`http://164.92.98.3:3001/user/deleteuser/${id}`);
+            const data = await axios.delete(`http://164.92.69.177:3001/user/deleteuser/${id}`);
             if (data.status == 200) {
                 getuser();
             }
@@ -138,7 +138,7 @@ export default function Register() {
                     <div className="w-40  px-3 d-flex flex-direction-column ">
                         <span className="font-14-px"> ເລືອກຮູບ </span>
                         <div className="w-100 d-flex flex-direction-column ">
-                            <img src={`${imageurls == null ? `http://164.92.98.3:3001/image/posts/` : imageurls}`} className="w-100 border-1-solid-default h-150-px border-radius-3-px max-width-180-px" />
+                            <img src={`${imageurls == null ? `http://164.92.69.177:3001/image/posts/` : imageurls}`} className="w-100 border-1-solid-default h-150-px border-radius-3-px max-width-180-px" />
                             <label for="imageshows" className="w-100 border-1-solid-default h-40-px d-flex justify-content-center align-items-center mt-2 border-radius-3-px bg-btn-picture text-white max-width-180-px font-14-px" > ເລືອກຮູບ </label>
                             <input id="imageshows" type="file" onChange={onchangimage} />
                         </div>
@@ -163,7 +163,7 @@ export default function Register() {
                             {
                                 user && user.length > 0 && user.map((item, index) =>
                                     <tr key={index}>
-                                        <td> <img src={item.image != "false" ? `http://164.92.98.3:3001/image/post/${item.image}` : `http://164.92.98.3:3001/image/post/noimage.jpg`} className="w-30-px h-30-px border-radius-50" /> </td>
+                                        <td> <img src={item.image != "false" ? `http://164.92.69.177:3001/image/post/${item.image}` : `http://164.92.69.177:3001/image/post/noimage.jpg`} className="w-30-px h-30-px border-radius-50" /> </td>
                                         <td >{item.username} </td>
                                         <td>{item.firstname}</td>
                                         <td>{item.lastname}</td>

@@ -18,7 +18,7 @@ export default function  PdfExport() {
 
             const token = localStorage.getItem("token");
 
-            const data = await axios.get("http://164.92.98.3:3001/product/getproduct", { headers: { Authorization: token } });
+            const data = await axios.get("http://164.92.69.177:3001/product/getproduct", { headers: { Authorization: token } });
             console.log(data.data)
             if (data.status == 200) {
 
